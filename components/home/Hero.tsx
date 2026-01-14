@@ -5,14 +5,67 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center texture-overlay bg-eterna-black overflow-hidden">
-      {/* Background with subtle gradient */}
+    <section className="relative h-screen flex items-center justify-center texture-overlay overflow-hidden">
+      {/* Animated Mesh Gradient Background */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        className="absolute inset-0 bg-gradient-to-br from-eterna-black via-eterna-maroon/10 to-eterna-black"
-      ></motion.div>
+        transition={{ duration: 2 }}
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(circle at 50% 50%, rgba(128, 0, 0, 0.15) 0%, transparent 70%), linear-gradient(135deg, #0a0a0a 0%, #1a0505 30%, #0a0a0a 70%, #050a0a 100%)'
+        }}
+      >
+        {/* Animated gradient orbs */}
+        <motion.div
+          className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-20 blur-3xl"
+          style={{ background: 'radial-gradient(circle, #800000 0%, transparent 70%)' }}
+          animate={{
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15 blur-3xl"
+          style={{ background: 'radial-gradient(circle, #d4af37 0%, transparent 70%)' }}
+          animate={{
+            x: [0, -30, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl"
+          style={{ background: 'radial-gradient(circle, #800000 0%, transparent 70%)', transform: 'translate(-50%, -50%)' }}
+          animate={{
+            scale: [1, 1.4, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        />
+      </motion.div>
+
+      {/* Decorative geometric elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-2 h-2 border-2 border-eterna-maroon/30"
+          animate={{ rotate: 360, scale: [1, 1.5, 1] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute top-3/4 right-1/4 w-3 h-3 border-2 border-eterna-gold/20"
+          animate={{ rotate: -360, scale: [1, 2, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute bottom-1/3 left-1/3 w-1 h-20 bg-gradient-to-b from-eterna-maroon/20 to-transparent"
+          animate={{ scaleY: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

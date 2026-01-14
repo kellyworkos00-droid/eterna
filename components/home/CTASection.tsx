@@ -10,8 +10,46 @@ const CTASection = () => {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 md:py-24 texture-overlay bg-gradient-to-br from-eterna-maroon to-eterna-black">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section ref={ref} className="py-16 sm:py-20 md:py-24 texture-overlay relative overflow-hidden">
+      {/* Dynamic gradient background */}
+      <div className="absolute inset-0" style={{
+        background: 'linear-gradient(135deg, #800000 0%, #1a0505 50%, #0a0a0a 100%)'
+      }}>
+        <motion.div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 100% 100%, rgba(128, 0, 0, 0.3) 0%, transparent 60%)
+            `
+          }}
+          animate={{
+            scale: [1, 1.1, 1],
+            rotate: [0, 2, 0],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* Floating geometric shapes */}
+        <motion.div
+          className="absolute top-20 left-10 w-20 h-20 border border-white/10 rotate-45"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.1, 0.3, 0.1],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-10 w-16 h-16 border border-eterna-gold/20"
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

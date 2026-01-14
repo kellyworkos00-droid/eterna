@@ -49,8 +49,36 @@ const WhyChooseEterna = () => {
   ]
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 md:py-24 bg-eterna-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0" style={{
+        background: 'linear-gradient(180deg, #0a0a0a 0%, #150505 50%, #0a0a0a 100%)'
+      }}>
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full opacity-30"
+          style={{
+            background: 'radial-gradient(circle at 30% 50%, rgba(128, 0, 0, 0.15) 0%, transparent 60%)'
+          }}
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-0 w-full h-full opacity-20"
+          style={{
+            background: 'radial-gradient(circle at 70% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 60%)'
+          }}
+          animate={{
+            x: [0, -80, 0],
+            y: [0, -40, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

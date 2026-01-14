@@ -34,8 +34,28 @@ const FeaturedProjects = () => {
   ]
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-br from-eterna-black to-eterna-maroon/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-24 relative overflow-hidden">
+      {/* Rich gradient background with animated elements */}
+      <div className="absolute inset-0" style={{
+        background: 'linear-gradient(135deg, #0a0a0a 0%, #1a0505 25%, #0a0a0a 50%, #050a0a 75%, #0a0a0a 100%)'
+      }}>
+        <motion.div
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 20% 30%, rgba(128, 0, 0, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.08) 0%, transparent 50%)
+            `
+          }}
+          animate={{ rotate: [0, 5, 0] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        />
+        {/* Decorative lines */}
+        <div className="absolute top-1/4 left-0 w-32 h-px bg-gradient-to-r from-transparent via-eterna-maroon/30 to-transparent" />
+        <div className="absolute bottom-1/3 right-0 w-40 h-px bg-gradient-to-l from-transparent via-eterna-gold/20 to-transparent" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
