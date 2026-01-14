@@ -15,8 +15,8 @@ const Portfolio = () => {
       title: 'Contemporary Living Space',
       category: 'Living Room',
       description: 'Modern luxury with clean lines and sophisticated finishes.',
-      before: '/projects/before1.jpg',
-      after: '/projects/after1.jpg',
+      before: '/projects/before1.png',
+      after: '/projects/after1.png',
     },
     {
       id: 2,
