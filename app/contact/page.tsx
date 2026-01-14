@@ -68,7 +68,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-eterna-accent/70 max-w-3xl mx-auto"
           >
-            Let's discuss your vision and how we can bring it to life. Schedule a complimentary
+            Let&apos;s discuss your vision and how we can bring it to life. Schedule a complimentary
             consultation today.
           </motion.p>
         </div>
