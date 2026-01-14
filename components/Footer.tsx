@@ -126,7 +126,11 @@ const Footer = () => {
               </li>
               <li className="text-eterna-accent/60">
                 <span className="block font-medium text-eterna-accent">Phone:</span>
-                +1 (555) 123-4567
+                +254 118 407 660
+              </li>
+              <li className="text-eterna-accent/60">
+                <span className="block font-medium text-eterna-accent">WhatsApp:</span>
+                +254 118 407 660
               </li>
               <li className="text-eterna-accent/60">
                 <span className="block font-medium text-eterna-accent">Hours:</span>

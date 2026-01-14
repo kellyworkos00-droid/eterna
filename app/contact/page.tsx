@@ -106,13 +106,14 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="text-eterna-maroon text-2xl">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="text-eterna-maroon text-xl sm:text-2xl mt-1">
                     <FaPhone />
                   </div>
                   <div>
-                    <h3 className="text-eterna-accent font-medium mb-1">Phone</h3>
-                    <p className="text-eterna-accent/70">+1 (555) 123-4567</p>
+                    <h3 className="text-eterna-accent font-medium mb-1">Phone / WhatsApp</h3>
+                    <p className="text-eterna-accent/70">+254 118 407 660</p>
+                    <p className="text-eterna-accent/50 text-xs mt-1">Available on WhatsApp</p>
                   </div>
                 </div>
 
