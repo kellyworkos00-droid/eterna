@@ -97,11 +97,11 @@ const Contact = () => {
                   <div>
                     <h3 className="text-eterna-accent font-medium mb-1">Office Location</h3>
                     <p className="text-eterna-accent/70">
-                      123 Design Avenue
+                      Nairobi, Kenya
                       <br />
-                      Suite 400
+                      Westlands Business District
                       <br />
-                      New York, NY 10001
+                      Nairobi, Kenya
                     </p>
                   </div>
                 </div>

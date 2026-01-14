@@ -94,18 +94,18 @@ const About = () => {
             <div className="space-y-6 text-eterna-accent/70 text-lg">
               <p>
                 Founded in 2011, Eterna Interiors Hub was born from a vision to create spaces
-                that transcend trends and stand the test of time. Our name reflects our
+                that transcend trends and stand the test of time. Based in Nairobi, Kenya, our name reflects our
                 commitment to eternal beauty and our role as a central hub for luxury design
                 excellence.
               </p>
               <p>
-                What began as a boutique design studio has evolved into a full-service interior
-                design firm, serving discerning clients across residential and commercial
+                What began as a boutique design studio in Nairobi has evolved into a full-service interior
+                design firm, serving discerning clients across Kenya and East Africa in both residential and commercial
                 sectors. Our philosophy is simple: every space tells a story, and we&apos;re here to
                 make yours unforgettable.
               </p>
               <p>
-                Today, we&apos;re proud to have transformed over 500 spaces, each one a testament to
+                Today, we&apos;re proud to have transformed over 500 spaces across Kenya, each one a testament to
                 our dedication to craftsmanship, innovation, and the pursuit of perfection. Our
                 team of award-winning designers brings decades of combined experience to every
                 project, ensuring results that consistently exceed expectations.
