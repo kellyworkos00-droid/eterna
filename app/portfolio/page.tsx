@@ -145,14 +145,14 @@ const Portfolio = () => {
                     beforeImage={project.before}
                     afterImage={project.after}
                   />
-                  <div className="mt-6">
-                    <div className="text-eterna-maroon text-sm font-medium mb-2">
+                  <div className="mt-4 sm:mt-6">
+                    <div className="text-eterna-maroon text-xs sm:text-sm font-medium mb-1 sm:mb-2 uppercase tracking-wide">
                       {project.category}
                     </div>
-                    <h3 className="text-2xl font-serif font-bold text-eterna-accent mb-2 group-hover:text-eterna-maroon transition-colors duration-300">
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-eterna-accent mb-2 group-hover:text-eterna-maroon transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-eterna-accent/70">{project.description}</p>
+                    <p className="text-sm sm:text-base text-eterna-accent/70 leading-relaxed">{project.description}</p>
                   </div>
                 </motion.div>
               ))}
