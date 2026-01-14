@@ -36,9 +36,9 @@ const About = () => {
 
   const team = [
     {
-      name: 'Sarah Mitchell',
+      name: 'Mercy Wangeci',
       role: 'Founder & Creative Director',
-      bio: 'With 20+ years in luxury design, Sarah leads our vision with passion and expertise.',
+      bio: 'With 20+ years in luxury design, Mercy leads our vision with passion and expertise.',
     },
     {
       name: 'James Chen',
