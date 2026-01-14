@@ -52,13 +52,13 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20 bg-eterna-black">
       {/* Hero Section */}
-      <section className="py-24 texture-overlay bg-gradient-to-br from-eterna-maroon/20 to-eterna-black">
+      <section className="py-16 sm:py-20 md:py-24 texture-overlay bg-gradient-to-br from-eterna-maroon/20 to-eterna-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-6xl font-serif font-bold text-eterna-accent mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-eterna-accent mb-4 sm:mb-6 px-2"
           >
             Get in <span className="text-eterna-maroon">Touch</span>
           </motion.h1>
@@ -66,7 +66,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-eterna-accent/70 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-eterna-accent/70 max-w-3xl mx-auto px-4 leading-relaxed"
           >
             Let&apos;s discuss your vision and how we can bring it to life. Schedule a complimentary
             consultation today.
@@ -75,9 +75,9 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-16">
+      <section className="py-12 sm:py-14 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -85,13 +85,13 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-1"
             >
-              <h2 className="text-3xl font-serif font-bold text-eterna-accent mb-6">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-eterna-accent mb-4 sm:mb-6">
                 Contact Information
               </h2>
 
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="text-eterna-maroon text-2xl">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="text-eterna-maroon text-xl sm:text-2xl mt-1">
                     <FaMapMarkerAlt />
                   </div>
                   <div>

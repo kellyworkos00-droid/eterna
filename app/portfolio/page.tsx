@@ -68,13 +68,13 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen pt-20 bg-eterna-black">
       {/* Hero Section */}
-      <section className="py-24 texture-overlay bg-gradient-to-br from-eterna-maroon/20 to-eterna-black">
+      <section className="py-16 sm:py-20 md:py-24 texture-overlay bg-gradient-to-br from-eterna-maroon/20 to-eterna-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-serif font-bold text-eterna-accent mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-eterna-accent mb-4 sm:mb-6 px-2"
           >
             Our <span className="text-eterna-maroon">Portfolio</span>
           </motion.h1>
@@ -82,7 +82,7 @@ const Portfolio = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-eterna-accent/70 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-eterna-accent/70 max-w-3xl mx-auto px-4 leading-relaxed"
           >
             Explore our collection of transformative interior design projects that showcase
             luxury, innovation, and timeless elegance.
@@ -91,9 +91,9 @@ const Portfolio = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 bg-eterna-black/50 sticky top-20 z-40 backdrop-blur-md">
+      <section className="py-8 sm:py-10 md:py-12 bg-eterna-black/50 sticky top-20 z-40 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
             {filters.map((filter, index) => (
               <motion.button
                 key={filter}
@@ -103,7 +103,7 @@ const Portfolio = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-2 font-medium transition-all duration-300 ${
+                className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 text-sm sm:text-base font-medium transition-all duration-300 ${
                   activeFilter === filter
                     ? 'bg-eterna-maroon text-white'
                     : 'bg-transparent border-2 border-eterna-maroon text-eterna-accent hover:bg-eterna-maroon hover:text-white'

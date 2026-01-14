@@ -49,25 +49,25 @@ const WhyChooseEterna = () => {
   ]
 
   return (
-    <section ref={ref} className="py-24 bg-eterna-black">
+    <section ref={ref} className="py-16 sm:py-20 md:py-24 bg-eterna-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-eterna-accent mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-eterna-accent mb-3 sm:mb-4 px-2">
             Why Choose <span className="text-eterna-maroon">Eterna</span>
           </h2>
-          <div className="w-24 h-1 bg-eterna-maroon mx-auto mb-6"></div>
-          <p className="text-xl text-eterna-accent/70 max-w-3xl mx-auto">
+          <div className="w-20 sm:w-24 h-1 bg-eterna-maroon mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-base sm:text-lg md:text-xl text-eterna-accent/70 max-w-3xl mx-auto px-4">
             We bring your vision to life with unparalleled expertise, creativity, and dedication
             to excellence.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -79,19 +79,19 @@ const WhyChooseEterna = () => {
                 ease: [0.16, 1, 0.3, 1]
               }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-eterna-maroon/5 border border-eterna-maroon/20 p-8 hover:bg-eterna-maroon/10 transition-all duration-300 group"
+              className="bg-eterna-maroon/5 border border-eterna-maroon/20 p-6 sm:p-8 hover:bg-eterna-maroon/10 transition-all duration-300 group"
             >
               <motion.div 
-                className="text-5xl mb-4 text-eterna-maroon"
+                className="text-4xl sm:text-5xl mb-3 sm:mb-4 text-eterna-maroon"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 transition={{ duration: 0.3 }}
               >
                 <feature.icon />
               </motion.div>
-              <h3 className="text-2xl font-serif font-bold text-eterna-accent mb-3 group-hover:text-eterna-maroon transition-colors duration-300">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-eterna-accent mb-2 sm:mb-3 group-hover:text-eterna-maroon transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-eterna-accent/70">{feature.description}</p>
+              <p className="text-sm sm:text-base text-eterna-accent/70 leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>

@@ -22,7 +22,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-4 sm:mb-6 px-2"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -32,7 +32,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-eterna-accent/80 mb-8 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-eterna-accent/80 mb-6 sm:mb-8 max-w-3xl mx-auto px-4 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -42,7 +42,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
@@ -51,10 +51,11 @@ const Hero = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
+              className="w-full sm:w-auto"
             >
               <Link
                 href="/contact"
-                className="block bg-eterna-maroon hover:bg-eterna-maroon/80 text-white px-8 py-4 text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-2xl"
+                className="block bg-eterna-maroon hover:bg-eterna-maroon/80 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-2xl text-center"
               >
                 Schedule Consultation
               </Link>
@@ -63,10 +64,11 @@ const Hero = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
+              className="w-full sm:w-auto"
             >
               <Link
                 href="/portfolio"
-                className="block border-2 border-eterna-maroon text-eterna-accent hover:bg-eterna-maroon hover:text-white px-8 py-4 text-lg font-medium transition-all duration-300"
+                className="block border-2 border-eterna-maroon text-eterna-accent hover:bg-eterna-maroon hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 text-center"
               >
                 View Portfolio
               </Link>
