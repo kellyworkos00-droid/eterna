@@ -34,7 +34,7 @@ const Contact = () => {
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false)
-      setSubmitMessage('Thank you! We\'ll be in touch within 24 hours.')
+      setSubmitMessage('Thank you! We&apos;ll be in touch within 24 hours.')
       setFormData({
         name: '',
         email: '',

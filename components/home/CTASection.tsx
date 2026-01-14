@@ -21,7 +21,7 @@ const CTASection = () => {
             Ready to Transform Your Space?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Let's create something extraordinary together. Schedule your complimentary
+            Let&apos;s create something extraordinary together. Schedule your complimentary
             consultation today and discover how we can bring your vision to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

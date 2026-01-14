@@ -48,7 +48,7 @@ const About = () => {
     {
       name: 'Elena Rodriguez',
       role: 'Design Consultant',
-      bio: 'Elena\'s eye for detail and color ensures each space tells a unique story.',
+      bio: 'Elena&apos;s eye for detail and color ensures each space tells a unique story.',
     },
     {
       name: 'Michael Thompson',
@@ -101,11 +101,11 @@ const About = () => {
               <p>
                 What began as a boutique design studio has evolved into a full-service interior
                 design firm, serving discerning clients across residential and commercial
-                sectors. Our philosophy is simple: every space tells a story, and we're here to
+                sectors. Our philosophy is simple: every space tells a story, and we&apos;re here to
                 make yours unforgettable.
               </p>
               <p>
-                Today, we're proud to have transformed over 500 spaces, each one a testament to
+                Today, we&apos;re proud to have transformed over 500 spaces, each one a testament to
                 our dedication to craftsmanship, innovation, and the pursuit of perfection. Our
                 team of award-winning designers brings decades of combined experience to every
                 project, ensuring results that consistently exceed expectations.
@@ -159,7 +159,7 @@ const About = () => {
               <p className="text-eterna-accent/70 text-lg">
                 To transform spaces into timeless environments that inspire, comfort, and
                 elevate daily life. We believe exceptional design should be accessible to those
-                who value quality, and we're committed to delivering unparalleled service and
+                who value quality, and we&apos;re committed to delivering unparalleled service and
                 results.
               </p>
             </motion.div>
@@ -258,7 +258,7 @@ const About = () => {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-eterna-accent mb-6">
-            Let's Create Something Beautiful Together
+            Let&apos;s Create Something Beautiful Together
           </h2>
           <p className="text-xl text-eterna-accent/70 mb-8">
             Schedule your consultation and discover how we can transform your space.
