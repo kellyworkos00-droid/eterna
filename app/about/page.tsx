@@ -271,6 +271,64 @@ const About = () => {
           </Link>
         </div>
       </section>
+
+      {/* Office Location Map */}
+      <section className="py-16 bg-gradient-to-br from-eterna-black to-eterna-maroon/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-eterna-accent mb-4">
+              Visit Our <span className="text-eterna-maroon">Showroom</span>
+            </h2>
+            <p className="text-lg text-eterna-accent/70 max-w-2xl mx-auto">
+              Located in the heart of Westlands Business District, Nairobi. 
+              Schedule an appointment to explore our curated collection.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="h-96 sm:h-[500px] border-4 border-eterna-maroon/30 rounded-lg overflow-hidden shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.045922768705!2d36.79231488715821!3d-1.2670200999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f171ca46d4c93%3A0x1e14c7c042a5885d!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1705252800000!5m2!1sen!2ske"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Eterna Interiors Hub Showroom - Westlands, Nairobi"
+                className="grayscale hover:grayscale-0 transition-all duration-500"
+              ></iframe>
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="bg-eterna-maroon/10 p-6 rounded-lg border border-eterna-maroon/20">
+                <h3 className="text-eterna-maroon font-semibold mb-2">Address</h3>
+                <p className="text-eterna-accent/70">Westlands Business District<br/>Nairobi, Kenya</p>
+              </div>
+              <div className="bg-eterna-maroon/10 p-6 rounded-lg border border-eterna-maroon/20">
+                <h3 className="text-eterna-maroon font-semibold mb-2">Phone / WhatsApp</h3>
+                <p className="text-eterna-accent/70">+254 118 407 660</p>
+              </div>
+              <div className="bg-eterna-maroon/10 p-6 rounded-lg border border-eterna-maroon/20">
+                <h3 className="text-eterna-maroon font-semibold mb-2">Hours</h3>
+                <p className="text-eterna-accent/70">Mon-Fri: 9AM-6PM<br/>Sat: By Appointment</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   )
 }

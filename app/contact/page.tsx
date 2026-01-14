@@ -144,10 +144,25 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-8 h-64 bg-eterna-maroon/10 border border-eterna-maroon/20 flex items-center justify-center">
-                <p className="text-eterna-accent/50">Google Maps Integration</p>
-              </div>
+              {/* Google Map */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mt-8 h-80 sm:h-96 border-4 border-eterna-maroon/20 overflow-hidden rounded-lg shadow-xl"
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.045922768705!2d36.79231488715821!3d-1.2670200999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f171ca46d4c93%3A0x1e14c7c042a5885d!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1705252800000!5m2!1sen!2ske"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Eterna Interiors Hub Location - Westlands, Nairobi"
+                  className="grayscale hover:grayscale-0 transition-all duration-500"
+                ></iframe>
+              </motion.div>
             </motion.div>
 
             {/* Contact Form */}
