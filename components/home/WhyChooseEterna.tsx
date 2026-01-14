@@ -71,15 +71,24 @@ const WhyChooseEterna = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.15,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              whileHover={{ y: -8, scale: 1.02 }}
               className="bg-eterna-maroon/5 border border-eterna-maroon/20 p-8 hover:bg-eterna-maroon/10 transition-all duration-300 group"
             >
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 text-eterna-maroon">
+              <motion.div 
+                className="text-5xl mb-4 text-eterna-maroon"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                transition={{ duration: 0.3 }}
+              >
                 <feature.icon />
-              </div>
-              <h3 className="text-2xl font-serif font-bold text-eterna-accent mb-3">
+              </motion.div>
+              <h3 className="text-2xl font-serif font-bold text-eterna-accent mb-3 group-hover:text-eterna-maroon transition-colors duration-300">
                 {feature.title}
               </h3>
               <p className="text-eterna-accent/70">{feature.description}</p>

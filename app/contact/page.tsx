@@ -55,9 +55,9 @@ const Contact = () => {
       <section className="py-24 texture-overlay bg-gradient-to-br from-eterna-maroon/20 to-eterna-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-5xl md:text-6xl font-serif font-bold text-eterna-accent mb-6"
           >
             Get in <span className="text-eterna-maroon">Touch</span>

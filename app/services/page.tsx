@@ -8,7 +8,9 @@ import { FaRulerCombined, FaPalette, FaGem, FaProjectDiagram, FaCouch, FaLightbu
 
 const Services = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const titleRef = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const isTitleInView = useInView(titleRef, { once: true })
 
   const services = [
     {

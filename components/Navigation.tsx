@@ -70,12 +70,17 @@ const Navigation = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-eterna-maroon group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="bg-eterna-maroon hover:bg-eterna-maroon/80 text-white px-6 py-2 rounded-none transition-all duration-300 font-medium"
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Book Consultation
-            </Link>
+              <Link
+                href="/contact"
+                className="block bg-eterna-maroon hover:bg-eterna-maroon/80 text-white px-6 py-2 rounded-none transition-all duration-300 font-medium shadow-md hover:shadow-lg"
+              >
+                Book Consultation
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}

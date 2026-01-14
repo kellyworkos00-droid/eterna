@@ -94,10 +94,15 @@ const Portfolio = () => {
       <section className="py-12 bg-eterna-black/50 sticky top-20 z-40 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
-            {filters.map((filter) => (
-              <button
+            {filters.map((filter, index) => (
+              <motion.button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
                 className={`px-6 py-2 font-medium transition-all duration-300 ${
                   activeFilter === filter
                     ? 'bg-eterna-maroon text-white'
@@ -105,7 +110,7 @@ const Portfolio = () => {
                 }`}
               >
                 {filter}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
@@ -126,9 +131,14 @@ const Portfolio = () => {
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: index * 0.15,
+                    ease: [0.16, 1, 0.3, 1]
+                  }}
+                  whileHover={{ y: -8 }}
                   className="group"
                 >
                   <BeforeAfterSlider

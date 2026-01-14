@@ -55,25 +55,45 @@ const FeaturedProjects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.2,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              whileHover={{ y: -10 }}
               className="group cursor-pointer"
             >
-              <div className="relative overflow-hidden bg-eterna-maroon/10 h-80 mb-4">
+              <motion.div 
+                className="relative overflow-hidden bg-eterna-maroon/10 h-80 mb-4"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4 }}
+              >
                 {/* Placeholder for image */}
                 <div className="absolute inset-0 flex items-center justify-center text-eterna-accent/20 text-6xl font-serif">
                   E.I.H
                 </div>
-                <div className="absolute inset-0 bg-eterna-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Link
-                    href={`/portfolio/${project.id}`}
-                    className="bg-eterna-maroon text-white px-6 py-3 font-medium"
+                <motion.div 
+                  className="absolute inset-0 bg-eterna-black/60 flex items-center justify-center"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileHover={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
                   >
-                    View Project
-                  </Link>
-                </div>
-              </div>
+                    <Link
+                      href={`/portfolio/${project.id}`}
+                      className="bg-eterna-maroon text-white px-6 py-3 font-medium inline-block hover:bg-eterna-maroon/80 transition-colors duration-300"
+                    >
+                      View Project
+                    </Link>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
               <div className="text-eterna-maroon text-sm font-medium mb-2">
                 {project.category}
               </div>
@@ -91,12 +111,18 @@ const FeaturedProjects = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center"
         >
-          <Link
-            href="/portfolio"
-            className="inline-block border-2 border-eterna-maroon text-eterna-accent hover:bg-eterna-maroon hover:text-white px-8 py-4 text-lg font-medium transition-all duration-300"
+          <motion.div
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
           >
-            View Full Portfolio
-          </Link>
+            <Link
+              href="/portfolio"
+              className="inline-block border-2 border-eterna-maroon text-eterna-accent hover:bg-eterna-maroon hover:text-white px-8 py-4 text-lg font-medium transition-all duration-300"
+            >
+              View Full Portfolio
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>
