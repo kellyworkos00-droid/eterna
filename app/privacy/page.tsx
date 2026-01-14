@@ -42,7 +42,7 @@ const Privacy = () => {
                 Introduction
               </h2>
               <p className="leading-relaxed">
-                Eterna Interiors Hub ("we," "our," or "us") is committed to protecting your privacy. 
+                Eterna Interiors Hub (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. 
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information 
                 when you visit our website or use our services in Kenya and East Africa.
               </p>
@@ -167,7 +167,7 @@ const Privacy = () => {
               </h2>
               <p className="leading-relaxed">
                 We may update this Privacy Policy from time to time. The updated version will be indicated 
-                by an updated "Last updated" date at the top of this page.
+                by an updated &quot;Last updated&quot; date at the top of this page.
               </p>
             </div>
 

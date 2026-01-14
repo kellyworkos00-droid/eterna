@@ -42,7 +42,7 @@ const Terms = () => {
                 Agreement to Terms
               </h2>
               <p className="leading-relaxed">
-                These Terms of Service ("Terms") govern your use of the Eterna Interiors Hub website 
+                These Terms of Service (&quot;Terms&quot;) govern your use of the Eterna Interiors Hub website 
                 and services. By accessing our website or engaging our services, you agree to be bound 
                 by these Terms. If you do not agree with these Terms, please do not use our services.
               </p>
@@ -213,7 +213,7 @@ const Terms = () => {
               </h2>
               <p className="leading-relaxed">
                 We reserve the right to modify these Terms at any time. Updated Terms will be posted 
-                on our website with a revised "Last updated" date. Continued use of our services 
+                on our website with a revised &quot;Last updated&quot; date. Continued use of our services 
                 constitutes acceptance of the updated Terms.
               </p>
             </div>
