@@ -6,6 +6,9 @@ import { useRef } from 'react'
 import Link from 'next/link'
 import { FaRulerCombined, FaPalette, FaGem, FaProjectDiagram, FaCouch, FaLightbulb } from 'react-icons/fa'
 
+import FAQ from '@/components/FAQ'
+import ScrollToTop from '@/components/ScrollToTop'
+
 const Services = () => {
   const ref = useRef(null)
   const titleRef = useRef(null)
@@ -217,6 +220,9 @@ const Services = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQ />
+
       {/* CTA */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -234,6 +240,8 @@ const Services = () => {
           </Link>
         </div>
       </section>
+
+      <ScrollToTop />
     </div>
   )
 }

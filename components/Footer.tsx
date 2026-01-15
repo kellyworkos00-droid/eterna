@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Newsletter from './Newsletter'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -29,19 +30,22 @@ const Footer = () => {
 
   return (
     <footer className="bg-eterna-black border-t border-eterna-maroon/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+      {/* Newsletter Section */}
+      <Newsletter />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12\">
+        <div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8\">
           {/* Brand Section */}
-          <div className="col-span-1">
-            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
+          <div className=\"col-span-1\">
+            <Link href=\"/\" className=\"flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4\">
               <Image
-                src="/logo.png"
-                alt="Eterna Interiors Hub Logo"
+                src=\"/logo.png\"
+                alt=\"Eterna Interiors Hub Logo\"
                 width={35}
                 height={35}
-                className="object-contain sm:w-[40px] sm:h-[40px]"
+                className=\"object-contain sm:w-[40px] sm:h-[40px]\"
               />
-              <div className="text-lg sm:text-xl font-serif font-bold text-eterna-accent">
+              <div className=\"text-lg sm:text-xl font-serif font-bold text-eterna-accent\">
                 E.I.H
               </div>
             </Link>
