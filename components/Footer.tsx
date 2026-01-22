@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -7,6 +8,35 @@ import Newsletter from './Newsletter'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const [isStandalone, setIsStandalone] = useState(false)
+
+  useEffect(() => {
+    // Check if the app is running in standalone mode (PWA)
+    const checkStandalone = () => {
+      const isStandalonePWA = 
+        window.matchMedia('(display-mode: standalone)').matches ||
+        (window.navigator as any).standalone === true ||
+        document.referrer.includes('android-app://');
+      
+      setIsStandalone(isStandalonePWA)
+    }
+
+    checkStandalone()
+    
+    // Listen for display mode changes
+    const mediaQuery = window.matchMedia('(display-mode: standalone)')
+    const handleChange = (e: MediaQueryListEvent) => setIsStandalone(e.matches)
+    
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange)
+      return () => mediaQuery.removeEventListener('change', handleChange)
+    }
+  }, [])
+
+  // Don't render footer in standalone PWA mode
+  if (isStandalone) {
+    return null
+  }
 
   const footerLinks = {
     company: [
