@@ -4,6 +4,8 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 import PWAInstallPrompt from '@/components/PWAInstallPrompt'
+import LiveChat from '@/components/LiveChat'
+import { CartProvider } from '@/context/CartContext'
 
 export const metadata: Metadata = {
   title: 'Eterna Interiors Hub | Luxury Interior Design',
@@ -37,11 +39,14 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
       <body>
-        <ScrollProgress />
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-        <PWAInstallPrompt />
+        <CartProvider>
+          <ScrollProgress />
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+          <PWAInstallPrompt />
+          <LiveChat />
+        </CartProvider>
       </body>
     </html>
   )

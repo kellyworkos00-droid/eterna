@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { useCart } from '@/context/CartContext'
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { cartCount } = useCart()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,7 @@ const Navigation = () => {
     { href: '/', label: 'Home' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/services', label: 'Services' },
+    { href: '/products', label: 'Products' },
     { href: '/about', label: 'About Us' },
     { href: '/contact', label: 'Contact' },
   ]
@@ -75,6 +78,19 @@ const Navigation = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-eterna-maroon group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
+            <Link
+              href="/cart"
+              className="relative text-eterna-accent hover:text-eterna-maroon transition-colors duration-300"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-eterna-maroon text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
@@ -89,34 +105,46 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-eterna-accent focus:outline-none p-2 hover:bg-eterna-maroon/10 transition-colors rounded-sm"
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="w-7 h-7"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+          <div className="flex items-center gap-4 md:hidden">
+            <Link href="/cart" className="relative text-eterna-accent">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-eterna-maroon text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartCount}
+                </span>
               )}
-            </svg>
-          </button>
+            </Link>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-eterna-accent focus:outline-none p-2 hover:bg-eterna-maroon/10 transition-colors rounded-sm"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMobileMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
