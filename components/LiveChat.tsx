@@ -50,7 +50,7 @@ export default function LiveChat() {
           "Hello! Nice to connect with you. I'm here to help with any questions about our interior design services or products. What brings you to Eterna Interiors today?";
       } else {
         botResponse =
-          "Thank you for your message! For detailed assistance, I recommend: 📧 Emailing us at info@eternainteriors.com, 📞 Calling (555) 123-4567, or 📅 Scheduling a consultation through our Contact page. How else can I help you?";
+          "Thank you for your message! For detailed assistance, I recommend: 📧 Emailing us at info@eternainteriors.com, 📞 Calling +254 118 407 660, 📱 WhatsApp +254 118 407 660, or 📅 Scheduling a consultation through our Contact page. How else can I help you?";
       }
 
       setMessages((prev) => [...prev, { text: botResponse, isUser: false }]);
@@ -63,7 +63,7 @@ export default function LiveChat() {
       {/* Chat Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 bg-amber-900 text-white rounded-full p-4 shadow-2xl hover:bg-amber-800 transition-colors"
+        className="fixed bottom-6 right-6 z-50 bg-eterna-maroon text-white rounded-full p-4 shadow-2xl hover:bg-eterna-maroon/90 transition-all backdrop-blur-sm"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
@@ -77,7 +77,7 @@ export default function LiveChat() {
           </svg>
         )}
         {!isOpen && (
-          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+          <span className="absolute -top-1 -right-1 bg-eterna-accent text-eterna-black text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold animate-pulse">
             1
           </span>
         )}
@@ -90,19 +90,21 @@ export default function LiveChat() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-24 right-6 z-50 w-96 bg-white rounded-2xl shadow-2xl overflow-hidden"
+            className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-eterna-accent/20"
             style={{ maxHeight: '600px' }}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-amber-900 to-amber-800 text-white p-4">
+            <div className="bg-gradient-to-r from-eterna-maroon via-amber-900 to-eterna-black text-white p-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                    🎨
+                  <div className="w-10 h-10 bg-eterna-accent/20 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-eterna-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold">Eterna Interiors</h3>
-                    <p className="text-xs text-amber-100">Online now</p>
+                    <h3 className="font-semibold text-eterna-accent">Eterna Interiors</h3>
+                    <p className="text-xs text-eterna-accent/80">Online now</p>
                   </div>
                 </div>
                 <button
@@ -128,8 +130,8 @@ export default function LiveChat() {
                   <div
                     className={`max-w-[80%] px-4 py-2 rounded-2xl ${
                       message.isUser
-                        ? 'bg-amber-900 text-white rounded-br-none'
-                        : 'bg-white text-gray-800 rounded-bl-none shadow-md'
+                        ? 'bg-eterna-maroon text-white rounded-br-none'
+                        : 'bg-white text-gray-800 rounded-bl-none shadow-md border border-gray-200'
                     }`}
                   >
                     {message.text}
@@ -161,7 +163,7 @@ export default function LiveChat() {
                     <button
                       key={index}
                       onClick={() => handleSendMessage(reply)}
-                      className="w-full text-left px-4 py-2 bg-white border border-amber-200 rounded-lg text-sm text-gray-700 hover:bg-amber-50 transition-colors"
+                      className="w-full text-left px-4 py-2 bg-white border border-eterna-maroon/30 rounded-lg text-sm text-gray-700 hover:bg-eterna-accent/10 hover:border-eterna-maroon transition-colors"
                     >
                       {reply}
                     </button>
@@ -184,12 +186,12 @@ export default function LiveChat() {
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   placeholder="Type your message..."
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-amber-600 focus:border-transparent outline-none"
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-eterna-maroon focus:border-transparent outline-none"
                 />
                 <button
                   type="submit"
                   disabled={!inputMessage.trim()}
-                  className="bg-amber-900 text-white p-2 rounded-full hover:bg-amber-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-eterna-maroon text-white p-2 rounded-full hover:bg-eterna-maroon/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -197,7 +199,7 @@ export default function LiveChat() {
                 </button>
               </form>
               <p className="text-xs text-gray-500 mt-2 text-center">
-                For immediate assistance, call (555) 123-4567
+                For immediate assistance, call +254 118 407 660
               </p>
             </div>
           </motion.div>

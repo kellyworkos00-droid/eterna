@@ -32,13 +32,13 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   };
 
   return (
-    <div className="min-h-screen bg-white py-12">
+    <div className="min-h-screen bg-gray-50 py-12 pt-24">
       <div className="container mx-auto px-6">
         {/* Breadcrumb */}
         <div className="mb-8 flex items-center gap-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-amber-600">Home</Link>
+          <Link href="/" className="hover:text-eterna-maroon">Home</Link>
           <span>/</span>
-          <Link href="/products" className="hover:text-amber-600">Products</Link>
+          <Link href="/products" className="hover:text-eterna-maroon">Products</Link>
           <span>/</span>
           <span className="text-gray-900">{product.name}</span>
         </div>
@@ -57,7 +57,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 </svg>
               </div>
               {product.featured && (
-                <div className="absolute top-4 left-4 bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                <div className="absolute top-4 left-4 bg-eterna-maroon text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                   Featured Product
                 </div>
               )}
@@ -71,7 +71,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             transition={{ duration: 0.6 }}
           >
             <div className="mb-4">
-              <span className="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-semibold uppercase">
+              <span className="inline-block bg-eterna-maroon/10 text-eterna-maroon px-3 py-1 rounded-full text-sm font-semibold uppercase">
                 {product.category}
               </span>
             </div>
@@ -84,8 +84,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               by <span className="font-semibold">{product.brand}</span>
             </div>
 
-            <div className="text-4xl font-bold text-amber-900 mb-6">
-              ${product.price.toLocaleString()}
+            <div className="text-4xl font-bold text-eterna-maroon mb-6">
+              KES {product.price.toLocaleString()}
             </div>
 
             <p className="text-gray-700 text-lg mb-8 leading-relaxed">
@@ -154,15 +154,22 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
                 <button
                   onClick={handleAddToCart}
-                  className="w-full bg-amber-900 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:bg-amber-800 transition-all shadow-lg hover:shadow-xl"
+                  className="w-full bg-eterna-maroon text-white py-4 px-8 rounded-lg font-semibold text-lg hover:bg-eterna-maroon/90 transition-all shadow-lg hover:shadow-xl"
                 >
-                  {addedToCart ? '✓ Added to Cart!' : 'Add to Cart'}
+                  {addedToCart ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      Added to Cart!
+                    </span>
+                  ) : 'Add to Cart'}
                 </button>
 
                 <div className="flex gap-4">
                   <Link
                     href="/cart"
-                    className="flex-1 border-2 border-amber-900 text-amber-900 py-4 px-8 rounded-lg font-semibold text-center hover:bg-amber-50 transition-colors"
+                    className="flex-1 border-2 border-eterna-maroon text-eterna-maroon py-4 px-8 rounded-lg font-semibold text-center hover:bg-eterna-maroon/10 transition-colors"
                   >
                     View Cart
                   </Link>
@@ -178,8 +185,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
             {/* Info Boxes */}
             <div className="mt-8 space-y-4">
-              <div className="border border-gray-200 rounded-lg p-4 flex items-start gap-3">
-                <div className="text-2xl">🎨</div>
+              <div className="border border-eterna-maroon/20 rounded-lg p-4 flex items-start gap-3 bg-white/50 backdrop-blur-sm">
+                <div className="text-eterna-maroon">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                  </svg>
+                </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Design Consultation</h4>
                   <p className="text-sm text-gray-600">
@@ -187,8 +198,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   </p>
                 </div>
               </div>
-              <div className="border border-gray-200 rounded-lg p-4 flex items-start gap-3">
-                <div className="text-2xl">🚚</div>
+              <div className="border border-eterna-maroon/20 rounded-lg p-4 flex items-start gap-3 bg-white/50 backdrop-blur-sm">
+                <div className="text-eterna-maroon">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                  </svg>
+                </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Professional Delivery</h4>
                   <p className="text-sm text-gray-600">
@@ -196,8 +211,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   </p>
                 </div>
               </div>
-              <div className="border border-gray-200 rounded-lg p-4 flex items-start gap-3">
-                <div className="text-2xl">🏆</div>
+              <div className="border border-eterna-maroon/20 rounded-lg p-4 flex items-start gap-3 bg-white/50 backdrop-blur-sm">
+                <div className="text-eterna-maroon">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Premium Quality</h4>
                   <p className="text-sm text-gray-600">

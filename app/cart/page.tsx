@@ -11,16 +11,20 @@ export default function CartPage() {
 
   if (cart.length === 0 && !showCheckoutForm) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-24">
         <div className="text-center">
-          <div className="text-6xl mb-6">🛒</div>
+          <div className="text-eterna-maroon mb-6">
+            <svg className="w-24 h-24 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+          </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Your Cart is Empty</h1>
           <p className="text-gray-600 mb-8">
             Start shopping to add products to your cart
           </p>
           <Link
             href="/products"
-            className="inline-block bg-amber-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-colors"
+            className="inline-block bg-eterna-maroon text-white px-8 py-4 rounded-lg font-semibold hover:bg-eterna-maroon/90 transition-colors"
           >
             Browse Products
           </Link>
@@ -30,7 +34,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 py-12 pt-24">
       <div className="container mx-auto px-6">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
 
@@ -60,7 +64,7 @@ export default function CartPage() {
                         <div>
                           <h3 className="text-xl font-bold text-gray-900">{item.name}</h3>
                           <p className="text-sm text-gray-600">{item.brand}</p>
-                          <p className="text-sm text-amber-600 mt-1">{item.category}</p>
+                          <p className="text-sm text-eterna-maroon mt-1">{item.category}</p>
                         </div>
                         <button
                           onClick={() => removeFromCart(item.id)}
@@ -96,10 +100,10 @@ export default function CartPage() {
                         {/* Price */}
                         <div className="text-right">
                           <p className="text-sm text-gray-600">
-                            ${item.price.toLocaleString()} each
+                            KES {item.price.toLocaleString()} each
                           </p>
-                          <p className="text-xl font-bold text-amber-900">
-                            ${(item.price * item.quantity).toLocaleString()}
+                          <p className="text-xl font-bold text-eterna-maroon">
+                            KES {(item.price * item.quantity).toLocaleString()}
                           </p>
                         </div>
                       </div>
@@ -118,13 +122,13 @@ export default function CartPage() {
 
             {/* Order Summary */}
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg p-6 shadow-md sticky top-6">
+              <div className="bg-white/95 backdrop-blur-xl rounded-lg p-6 shadow-md border border-eterna-maroon/20 sticky top-24">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Order Summary</h2>
 
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between text-gray-600">
                     <span>Items ({cartCount}):</span>
-                    <span>${cartTotal.toLocaleString()}</span>
+                    <span>KES {cartTotal.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Estimated Delivery:</span>
@@ -132,13 +136,13 @@ export default function CartPage() {
                   </div>
                   <div className="border-t pt-3 flex justify-between text-xl font-bold text-gray-900">
                     <span>Total:</span>
-                    <span className="text-amber-900">${cartTotal.toLocaleString()}</span>
+                    <span className="text-eterna-maroon">KES {cartTotal.toLocaleString()}</span>
                   </div>
                 </div>
 
                 <button
                   onClick={() => setShowCheckoutForm(true)}
-                  className="w-full bg-amber-900 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-amber-800 transition-colors mb-4"
+                  className="w-full bg-eterna-maroon text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-eterna-maroon/90 transition-colors mb-4"
                 >
                   Proceed to Checkout
                 </button>
@@ -151,16 +155,22 @@ export default function CartPage() {
                 </Link>
 
                 <div className="mt-6 pt-6 border-t space-y-3 text-sm text-gray-600">
-                  <p className="flex items-start gap-2">
-                    <span>💬</span>
-                    <span>Need help? Our design team is available to assist you</span>
+                  <p className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-eterna-maroon flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                    <span>Need help? Call us at +254 118 407 660</span>
                   </p>
-                  <p className="flex items-start gap-2">
-                    <span>🚚</span>
+                  <p className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-eterna-maroon flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                    </svg>
                     <span>Professional delivery and installation available</span>
                   </p>
-                  <p className="flex items-start gap-2">
-                    <span>🎨</span>
+                  <p className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-eterna-maroon flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
                     <span>Free design consultation with your order</span>
                   </p>
                 </div>
@@ -207,7 +217,11 @@ function CheckoutForm({
   if (submitted) {
     return (
       <div className="max-w-2xl mx-auto text-center py-20">
-        <div className="text-6xl mb-6">✓</div>
+        <div className="text-eterna-maroon mb-6">
+          <svg className="w-24 h-24 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
         <h2 className="text-3xl font-bold text-gray-900 mb-4">
           Order Request Received!
         </h2>
@@ -218,14 +232,14 @@ function CheckoutForm({
         <div className="space-y-4">
           <Link
             href="/products"
-            className="inline-block bg-amber-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-colors"
+            className="inline-block bg-eterna-maroon text-white px-8 py-4 rounded-lg font-semibold hover:bg-eterna-maroon/90 transition-colors"
           >
             Continue Shopping
           </Link>
           <br />
           <Link
             href="/"
-            className="inline-block text-amber-600 hover:text-amber-700 font-semibold"
+            className="inline-block text-eterna-maroon hover:text-eterna-maroon/80 font-semibold"
           >
             Return to Home
           </Link>
@@ -236,7 +250,7 @@ function CheckoutForm({
 
   return (
     <div className="max-w-4xl mx-auto">
-      <button onClick={onBack} className="text-amber-600 hover:text-amber-700 mb-6 flex items-center gap-2">
+      <button onClick={onBack} className="text-eterna-maroon hover:text-eterna-maroon/80 mb-6 flex items-center gap-2">
         ← Back to Cart
       </button>
 
@@ -254,7 +268,7 @@ function CheckoutForm({
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eterna-maroon focus:border-transparent"
               />
             </div>
 
@@ -267,20 +281,21 @@ function CheckoutForm({
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eterna-maroon focus:border-transparent"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Phone *
+                Phone (+254 118 407 660) *
               </label>
               <input
                 type="tel"
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eterna-maroon focus:border-transparent"
+                placeholder="+254 XXX XXX XXX"
               />
             </div>
 
@@ -293,7 +308,7 @@ function CheckoutForm({
                 required
                 value={formData.address}
                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eterna-maroon focus:border-transparent"
               />
             </div>
 
@@ -307,7 +322,7 @@ function CheckoutForm({
                   required
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eterna-maroon focus:border-transparent"
                 />
               </div>
               <div>
@@ -319,7 +334,7 @@ function CheckoutForm({
                   required
                   value={formData.zipCode}
                   onChange={(e) => setFormData({ ...formData, zipCode: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eterna-maroon focus:border-transparent"
                 />
               </div>
             </div>
@@ -332,14 +347,14 @@ function CheckoutForm({
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eterna-maroon focus:border-transparent"
                 placeholder="Any special requests or questions?"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-amber-900 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-amber-800 transition-colors"
+              className="w-full bg-eterna-maroon text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-eterna-maroon/90 transition-colors"
             >
               Submit Order Request
             </button>
@@ -352,7 +367,7 @@ function CheckoutForm({
 
         {/* Order Summary */}
         <div>
-          <div className="bg-white rounded-lg p-8 shadow-md sticky top-6">
+          <div className="bg-white/95 backdrop-blur-xl rounded-lg p-8 shadow-md border border-eterna-maroon/20 sticky top-24">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Order Summary</h2>
             <div className="space-y-3 mb-6">
               {cart.map((item) => (
@@ -361,14 +376,14 @@ function CheckoutForm({
                     {item.name} × {item.quantity}
                   </span>
                   <span className="font-semibold">
-                    ${(item.price * item.quantity).toLocaleString()}
+                    KES {(item.price * item.quantity).toLocaleString()}
                   </span>
                 </div>
               ))}
             </div>
             <div className="border-t pt-4 flex justify-between text-xl font-bold">
               <span>Total:</span>
-              <span className="text-amber-900">${cartTotal.toLocaleString()}</span>
+              <span className="text-eterna-maroon">KES {cartTotal.toLocaleString()}</span>
             </div>
 
             <div className="mt-6 pt-6 border-t space-y-4 text-sm text-gray-600">
