@@ -35,7 +35,7 @@ const Navigation = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-4 left-4 z-50 transition-all duration-300 ${
+        className={`fixed top-8 left-8 z-50 transition-all duration-300 ${
           isScrolled
             ? 'bg-eterna-black/80 backdrop-blur-xl shadow-2xl border border-eterna-accent/20'
             : 'bg-eterna-black/60 backdrop-blur-md'
@@ -58,7 +58,7 @@ const Navigation = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
+        className={`fixed top-24 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
           isScrolled
             ? 'bg-eterna-black/80 backdrop-blur-xl shadow-2xl border border-eterna-accent/20'
             : 'bg-eterna-black/60 backdrop-blur-md'
@@ -141,7 +141,7 @@ const Navigation = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed top-20 left-4 right-4 z-40 bg-eterna-black/95 backdrop-blur-xl border border-eterna-accent/20 rounded-2xl shadow-2xl"
+          className="fixed top-40 left-4 right-4 z-40 bg-eterna-black/95 backdrop-blur-xl border border-eterna-accent/20 rounded-2xl shadow-2xl"
         >
           <div className="px-6 py-6 space-y-2">
             {navLinks.map((link, index) => (

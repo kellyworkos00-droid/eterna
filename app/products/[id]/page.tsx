@@ -32,7 +32,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 pt-24">
+    <div className="min-h-screen bg-gray-50 py-12 pt-40">
       <div className="container mx-auto px-6">
         {/* Breadcrumb */}
         <div className="mb-8 flex items-center gap-2 text-sm text-gray-600">

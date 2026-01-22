@@ -30,7 +30,7 @@ export default function ProductsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 pt-24">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 pt-40">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-eterna-maroon via-amber-900 to-eterna-black text-white py-32">
         <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
