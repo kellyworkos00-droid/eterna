@@ -73,11 +73,11 @@ const Navigation = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className={`fixed top-24 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
+        className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
           isScrolled
             ? 'bg-eterna-black/80 backdrop-blur-xl shadow-2xl border border-eterna-accent/20'
-            : 'bg-eterna-black/60 backdrop-blur-md'
-        } rounded-full`}
+            : 'bg-eterna-black/80 backdrop-blur-xl border border-eterna-accent/20'
+        } rounded-full shadow-2xl`}
       >
         <div className="px-6 py-3">
           <div className="flex items-center gap-3">
