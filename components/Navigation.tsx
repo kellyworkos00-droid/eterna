@@ -79,54 +79,54 @@ const Navigation = () => {
             : 'bg-eterna-black/90 backdrop-blur-xl border-2 border-eterna-accent/30'
         } rounded-full shadow-2xl`}
       >
-        <div className="px-8 py-4">
-          <div className="flex items-center gap-4">
+        <div className="px-4 py-3">
+          <div className="flex items-center gap-2">
             {/* Main Nav Links - Home, Portfolio, Products */}
             {mainNavLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="flex flex-col items-center gap-1 text-eterna-accent hover:text-eterna-maroon transition-colors duration-300 px-5 py-2 rounded-2xl hover:bg-eterna-maroon/20 group"
+                className="flex flex-col items-center gap-0.5 text-eterna-accent hover:text-eterna-maroon transition-colors duration-300 px-3 py-2 rounded-xl hover:bg-eterna-maroon/20 group"
                 title={link.label}
               >
-                <div className="transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-300">
                   {link.icon}
                 </div>
-                <span className="text-xs font-medium">{link.label}</span>
+                <span className="text-[10px] font-medium">{link.label}</span>
               </Link>
             ))}
 
             {/* Menu Icon (Center) - Opens popup for Services, About, Contact */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="flex flex-col items-center gap-1 text-eterna-accent hover:text-eterna-maroon transition-colors duration-300 px-5 py-2 rounded-2xl hover:bg-eterna-maroon/20 group"
+              className="flex flex-col items-center gap-0.5 text-eterna-accent hover:text-eterna-maroon transition-colors duration-300 px-3 py-2 rounded-xl hover:bg-eterna-maroon/20 group"
               title="Menu"
             >
-              <div className="transform group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </div>
-              <span className="text-xs font-medium">Menu</span>
+              <span className="text-[10px] font-medium">Menu</span>
             </button>
 
             {/* Cart Icon */}
             <Link
               href="/cart"
-              className="relative flex flex-col items-center gap-1 text-eterna-accent hover:text-eterna-maroon transition-colors duration-300 px-5 py-2 rounded-2xl hover:bg-eterna-maroon/20 group"
+              className="relative flex flex-col items-center gap-0.5 text-eterna-accent hover:text-eterna-maroon transition-colors duration-300 px-3 py-2 rounded-xl hover:bg-eterna-maroon/20 group"
               title="Cart"
             >
-              <div className="transform group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-eterna-maroon text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-lg">
+                  <span className="absolute -top-1 -right-1 bg-eterna-maroon text-white text-[8px] rounded-full w-4 h-4 flex items-center justify-center font-bold shadow-lg">
                     {cartCount}
                   </span>
                 )}
               </div>
-              <span className="text-xs font-medium">Cart</span>
+              <span className="text-[10px] font-medium">Cart</span>
             </Link>
           </div>
         </div>
