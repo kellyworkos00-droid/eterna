@@ -63,7 +63,7 @@ export default function LiveChat() {
       {/* Chat Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 bg-eterna-maroon text-white rounded-full p-4 shadow-2xl hover:bg-eterna-maroon/90 transition-all backdrop-blur-sm"
+        className="fixed bottom-32 right-8 z-50 bg-eterna-maroon text-white rounded-full p-4 shadow-2xl hover:bg-eterna-maroon/90 transition-all backdrop-blur-sm border-2 border-eterna-accent/30"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
