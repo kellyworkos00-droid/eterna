@@ -68,12 +68,12 @@ const Navigation = () => {
         </Link>
       </motion.div>
 
-      {/* Main Floating Navigation - Centered Bottom */}
+      {/* Main Floating Navigation - Left Bottom */}
       <motion.nav
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className={`fixed bottom-10 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
+        className={`fixed bottom-10 left-4 z-50 transition-all duration-300 ${
           isScrolled
             ? 'bg-eterna-black/90 backdrop-blur-xl shadow-2xl border-2 border-eterna-accent/30'
             : 'bg-eterna-black/90 backdrop-blur-xl border-2 border-eterna-accent/30'
